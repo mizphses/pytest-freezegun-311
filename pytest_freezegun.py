@@ -14,10 +14,7 @@ def get_closest_marker(node, name):
     """
     Get our marker, regardless of pytest version
     """
-    if LooseVersion(pytest.__version__) < LooseVersion('3.6.0'):
-        return node.get_marker('freeze_time')
-    else:
-        return node.get_closest_marker('freeze_time')
+    return node.get_closest_marker('freeze_time')
 
 
 @pytest.fixture(name=FIXTURE_NAME)
